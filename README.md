@@ -76,3 +76,26 @@ Need more help? Visit the FAQ & Troubleshooting Guide: https://docs.layeredge.io
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+git clone https://github.com/Layer-Edge/light-node.git
+cd light-node
+
+curl -L https://risczero.com/install | bash && rzup install
+
+GRPC_URL=grpc.testnet.layeredge.io:9090
+CONTRACT_ADDR=cosmos1ufs3tlq4umljk0qfe8k5ya0x6hpavn897u2cnf9k0en9jr7qarqqt56709
+ZK_PROVER_URL=http://127.0.0.1:3001
+# Alternatively:
+ZK_PROVER_URL=https://layeredge.mintair.xyz/
+API_REQUEST_TIMEOUT=100
+POINTS_API=https://light-node.layeredge.io
+PRIVATE_KEY='cli-node-private-key'
+
+cd risc0-merkle-service
+cargo build && cargo run
+
+go build
+./light-node
+
+https://light-node.layeredge.io/api/cli-node/points/0x84b0cc415383389352e51b7b66aabbf953ac440e
+
